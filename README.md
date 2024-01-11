@@ -1,4 +1,4 @@
-Amazon Bedrock Client for Mac
+Amazon Bedrock Summary Client for Chrome
 =============================
 
 [![Latest Release](https://img.shields.io/github/v/release/aws-samples/amazon-bedrock-summary-client-for-chrome)](https://github.com/aws-samples/amazon-bedrock-summary-client-for-chrome/releases/latest)
