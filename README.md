@@ -91,8 +91,9 @@ git
 
 #### 1. Clone the repository
 
-`git clone git@github.com:aws-samples/amazon-bedrock-summary-client-for-chrome.git
-cd amazon-bedrock-summary-client-for-chrome`
+`git clone git@github.com:aws-samples/amazon-bedrock-summary-client-for-chrome.git`
+
+`cd amazon-bedrock-summary-client-for-chrome`
 
 #### 2. Build Plug-in
 
