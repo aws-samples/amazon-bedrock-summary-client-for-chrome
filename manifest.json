@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "amazon-bedrock-summary-client-for-chrome",
+  "version": "1.0",
+  "description": "Sample browser plug-in that summarizes any web page using Amazon Bedrock",
+  "action": {
+    "default_icon": {
+      "16": "images/16.png",
+      "24": "images/24.png",
+      "32": "images/32.png",
+      "48": "images/48.png",
+      "128": "images/128.png"
+    },
+    "default_title": "Click Me to Summarize this page",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "https://*/"],
+      "css": [],
+      "js": ["content-script.js"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self';"
+  }
+}

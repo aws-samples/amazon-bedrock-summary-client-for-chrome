@@ -1,0 +1,18 @@
+.frame {
+  width: 600px;
+  display: flex;
+  padding: 10px;
+}
+.main {
+  flex: 1;
+  width: 0;
+}
+.main-content {
+  min-height: 400px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 10px;
+}
+.options {
+  padding-left: 10px;
+  width: 100px;
+}
