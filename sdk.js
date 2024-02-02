@@ -2,14 +2,14 @@ import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedroc
 
 export default function (request, options, callback) {
   const client = new BedrockRuntimeClient({
-    region: "us-west-2",
+    region: "us-gov-west-1",
     credentials: {
       accessKeyId: options.accessKeyId,
       secretAccessKey: options.secretAccessKey,
       sessionToken: options.sessionToken
     },
   });
-  let prompt = '\n\nHuman: Summary the following text.'
+  let prompt = 'User: Summarize the following text :'
   if (options.regexp) {
     try {
       const reg = new RegExp(options.regexp, 'g');
@@ -22,17 +22,17 @@ export default function (request, options, callback) {
   } else {
     prompt = prompt + request;
   }
-  prompt = prompt + '\n\nAssistant:';
+  prompt = prompt + '\n\nBot:';
   // prompt size limited
   // prompt = prompt.slice(0, 8192);
   const input = {
     body: JSON.stringify({
       prompt,
-      max_tokens_to_sample: 8000,
+      textGenerationConfig: { "maxTokenCount": 8000, "stopSequences": [ "User:" ], "temperature": 0, "topP": 0.9 },
     }),
     contentType: "application/json",
     accept: "application/json",
-    modelId: "anthropic.claude-v2:1",
+    modelId: "amazon.titan-text-express-v1",
   };
   const command = new InvokeModelCommand(input);
   client.send(command).then((response) => {
