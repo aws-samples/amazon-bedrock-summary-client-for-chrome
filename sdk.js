@@ -27,7 +27,7 @@ export default function (request, options, callback) {
   // prompt = prompt.slice(0, 8192);
   const input = {
     body: JSON.stringify({
-      prompt,
+      inputText: prompt,
       textGenerationConfig: { "maxTokenCount": 8000, "stopSequences": [ "User:" ], "temperature": 0, "topP": 0.9 },
     }),
     contentType: "application/json",
