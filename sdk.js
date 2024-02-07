@@ -40,7 +40,7 @@ export default function (request, options, callback) {
       const result = new TextDecoder().decode(response.body);
       try {
         const jsonResult = JSON.parse(result);
-        callback && callback(jsonResult);
+        callback && callback(jsonResult.results);
       } catch (e) {
         console.warn(e)
       }
