@@ -33,7 +33,7 @@ const summarizePage = function () {
       awsSend(bodyString, { accessKeyId, secretAccessKey, sessionToken, regexp }, function (res) {
         intervalId = clearInterval(intervalId);
         if (res) {
-          const text = res.completion;
+          const text = res.pop().outputText;
           document.getElementById('aws_extension_content').innerHTML = text;
         }
       });
