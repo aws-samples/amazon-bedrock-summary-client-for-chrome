@@ -24,7 +24,7 @@ export default function (request, options, callback) {
   }
   prompt = prompt + '\n\nBot:';
   // prompt size limited
-  // prompt = prompt.slice(0, 8192);
+  prompt = prompt.slice(0, 20000);
   const input = {
     body: JSON.stringify({
       inputText: prompt,
